@@ -16,11 +16,34 @@ class MyApp extends StatelessWidget {
         ),
         body: Container(
           alignment: Alignment.center,
-          child: const Text("Flutter app", style: TextStyle(fontSize: 25)),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () => {},
+          padding: const EdgeInsets.all(16.0), // Add some padding
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [ // Add some space between text and TextField
+              const TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                  hintText: 'your@email.com...',
+                  icon: Icon(Icons.mail),
+                ),
+                ),
+                const SizedBox(height: 15),
+                const TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                    hintText: 'Password',
+                    icon: Icon(Icons.password)
+                  ),
+                ),
+                const SizedBox(height: 15),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Login'),
+                )
+            ],
+          ),
         ),
       ),
     );
